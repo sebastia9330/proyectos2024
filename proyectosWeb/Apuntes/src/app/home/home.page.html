@@ -1,20 +1,15 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+
 
 <ion-content [fullscreen]="true">
   <ion-content color="light">
     <h2>Coincidencias</h2>
     <ion-list [inset]="true">
-        <div class="arriba">
-          <ion-chip>Matematicas 2</ion-chip>
-          <ion-chip>Contabilidad 1</ion-chip>
+        <div *ngFor="let persona of listaPersonas" class="personaContainer" [ngClass]="{'virtual' : persona.metodoEstudio.includes('virtual')}">
+          <div class="arriba">
+            <ion-chip *ngFor="let materia of persona.coincidencias">{{materia}}</ion-chip>
+          </div>
+          <ion-label>{{persona.nombre}}</ion-label>
         </div>
-        <ion-label>Pokémon Yellow</ion-label>
         <!-- <ion-icon name="information-circle" slot="end"></ion-icon> -->
     </ion-list>
   </ion-content>
