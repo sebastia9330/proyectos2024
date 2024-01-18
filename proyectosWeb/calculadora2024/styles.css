@@ -13,6 +13,7 @@ body{
     border: 2px solid black;
     padding: 10px 8px 10px 8px;
     border-radius: 5px;
+    position: relative;
 }
 
 #botonesContainer{
@@ -38,6 +39,14 @@ body{
     margin: 0;
     padding: 10px;
     background-color: rgba(255, 255, 255, 0.05);
+}
+
+#indicadorOperacion{
+    position: absolute;
+    font-size: x-large;
+    font-weight: bold;
+    top: 5px;
+    left: 30px;
 }
 
 footer{
