@@ -9,8 +9,8 @@ let numeroAnterior;
 let numeroReinicia = false;
 
 //eventos
-botonesNumeros.forEach(boton => boton.addEventListener("click",(e) =>numeroClickeado(e.target.textContent)));
-botonesOperaciones.forEach(boton => boton.addEventListener("click",(e) =>operacionClickeada(e.target.textContent)));
+botonesNumeros.forEach((boton) => {boton.addEventListener("click",(e) =>numeroClickeado(parseFloat(e.target.textContent)))});
+botonesOperaciones.forEach((boton) => {boton.addEventListener("click",(e) =>operacionClickeada(e.target.textContent))});
 document.getElementById("punto").addEventListener("click",punto);
 document.getElementById("clear").addEventListener("click",clear);
 document.getElementById("allClear").addEventListener("click",allClear);

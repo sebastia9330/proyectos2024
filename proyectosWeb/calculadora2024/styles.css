@@ -6,6 +6,7 @@ body{
     margin: 0;
     height: 100vh;
     background: linear-gradient(#89BF9C, #E6E4C6);
+    user-select: none;
 }
 
 #container{
@@ -14,6 +15,7 @@ body{
     padding: 10px 8px 10px 8px;
     border-radius: 5px;
     position: relative;
+    background: linear-gradient(#89BF9C, #006ba888);
 }
 
 #botonesContainer{
@@ -60,7 +62,7 @@ footer{
 
 button{
     font-size: larger;
-    border-radius: 5px;
+    border-radius: 50px;
     border-width: 1px;
     box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
     cursor: pointer;
