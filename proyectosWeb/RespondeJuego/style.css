@@ -33,7 +33,7 @@ button{
     padding: 20px   ;
 }
 
-#icon{
+#icono{
     display: inline-block;
     color: white;
     background-color: blue;
@@ -61,5 +61,5 @@ button{
 }
 
 .escondido{
-    
+    display: none; 
 }
