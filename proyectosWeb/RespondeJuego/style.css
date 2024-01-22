@@ -63,3 +63,7 @@ button{
 .escondido{
     display: none; 
 }
+
+.correcta:focus{
+    background-color: #0000001f;
+}

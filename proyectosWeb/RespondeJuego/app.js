@@ -21,15 +21,16 @@ icono.addEventListener("mouseleave", () =>{
 
 fraseElement.addEventListener("input",(e)=>
     {//console.log(e.data)
-    if(e.data === "-"){
-        estadoTruco = !estadoTruco
-        escribirLetraCorrecta()
-    };
-    if(estadoTruco){
-        respuestaSecreta += e.data;
-        escribirLetraCorrecta();
-        console.log(respuestaSecreta)
-    }
+        if(e.data === "-"){
+            estadoTruco = !estadoTruco
+            escribirLetraCorrecta()
+        };
+        if(estadoTruco){
+            respuestaSecreta += e.data;
+            escribirLetraCorrecta();
+            console.log(respuestaSecreta)
+        }
+        fraseElement.classList.toggle("correcta", fraseElement.value === fraseSecreta)
     }
 )
 
