@@ -1,0 +1,13 @@
+
+
+<ion-content>
+  <div id="portada">
+    <img src="../../../assets/img/perfil/199256069_1125757917919307_5914477531435032390_n.jpg" alt="">
+  </div>
+  <h1>{{persona.nombre}}</h1>
+  <h2>{{persona.universidad}} - {{persona.carrera}}</h2>
+  <ul>
+    <p>Estudiando:</p>
+    <li *ngFor="let materia of persona.materias">{{materia}}</li>
+  </ul>
+</ion-content>

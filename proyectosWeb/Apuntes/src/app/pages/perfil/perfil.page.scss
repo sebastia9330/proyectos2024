@@ -1,0 +1,22 @@
+#portada{
+    background-color: beige;
+    height: 150px;
+    position: relative;
+    margin-bottom: 100px;
+    img{
+        width: 50vw;
+        position: absolute;
+        left: 25%;
+        bottom: -50%;
+        transform-origin: bottom;
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+    }
+}
+
+h1,h2{
+    text-align: center;
+}
