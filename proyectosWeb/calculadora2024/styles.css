@@ -1,0 +1,148 @@
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(#89BF9C, #E6E4C6);
+    user-select: none;
+}
+
+#container{
+    margin: auto;
+    border: 2px solid black;
+    padding: 10px 8px 10px 8px;
+    border-radius: 5px;
+    position: relative;
+    background: linear-gradient(#89BF9C, #006ba888);
+}
+
+#botonesContainer{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: 
+    "ac dividido por menos"
+    "siete ocho nueve mas"
+    "cuatro cinco seis mas"
+    "uno dos tres igual"
+    "c cero punto igual";
+    gap: 10px;
+    width: 400px;
+    aspect-ratio: 1;
+    margin-top: 15px;
+}
+
+#pantalla{
+    border: 1px solid black;
+    text-align: end;
+    font-size: 3.5rem;
+    border-radius: 2px;
+    margin: 0;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+#indicadorOperacion{
+    position: absolute;
+    font-size: x-large;
+    font-weight: bold;
+    top: 5px;
+    left: 30px;
+}
+
+footer{
+    margin-top: auto;
+    padding: 15px 0;
+    text-align: center;
+    background-color: rgba(14, 13, 13, 0.164);
+    font-size: 25px;
+    width: 100%;
+}
+
+button{
+    font-size: larger;
+    border-radius: 50px;
+    border-width: 1px;
+    box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+    cursor: pointer;
+    transition: 30ms;
+    background-color: rgba(255, 255, 255, 0.54);
+}
+
+button:hover{
+    background-color: rgba(153, 153, 153, 0.144);
+}
+
+#allclear{
+    grid-area: ac;
+}
+
+#dividido{
+    grid-area: dividido;
+}
+
+#por{
+    grid-area: por;
+}
+
+#menos{
+    grid-area: menos;
+}
+
+#siete{
+    grid-area: siete;
+}
+
+#ocho{
+    grid-area: ocho;
+}
+
+#nueve{
+    grid-area: nueve;
+}
+
+#mas{
+    grid-area: mas;
+}
+
+#cuatro{
+    grid-area: cuatro;
+}
+
+#cinco{
+    grid-area: cinco;
+}
+
+#seis{
+    grid-area: seis;
+}
+
+#uno{
+    grid-area: uno;
+}
+
+#dos{
+    grid-area: dos;
+}
+
+#tres{
+    grid-area: tres;
+}
+
+#igual{
+    grid-area: igual;
+}
+
+#clear{
+    grid-area: c;
+}
+
+#cero{
+    grid-area: cero;
+}
+
+#punto{
+    grid-area: punto;
+}
+
