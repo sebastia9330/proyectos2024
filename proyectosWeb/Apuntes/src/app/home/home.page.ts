@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { coincidencia } from '../core/interfaces/coincidencias';
+import { usuario } from '../core/interfaces/coincidencias';
+import { UsuariosService } from '../core/services/usuarios.service';
 
 @Component({
   selector: 'app-home',
@@ -8,19 +9,24 @@ import { coincidencia } from '../core/interfaces/coincidencias';
 })
 export class HomePage {
 
-  constructor() {}
+  constructor(private usuarioService: UsuariosService) {}
 
-  listaPersonas: coincidencia[] = [
-    {
-      nombre : "Dilza Robles",
-      metodoEstudio: ["presencial"],
-      coincidencias: ["Matematicas 2", "Contabilidad 1"]
-    },
-    {
-      nombre : "Sebastian Carrero",
-      metodoEstudio: ["virtual"],
-      coincidencias: ["Matematicas 2"]
-    }
-  ]
+  
+
+  listaTodasPersonas: usuario[] = this.usuarioService.getAll();
+  listaPersonas: usuario[] = this.listaTodasPersonas;
+
+  persona = {
+    nombre: "Sebastian Carrero",
+    universidad: "Los Libertadores",
+    carrera: "Ingenieria en Sistemas",
+    materias: ["Contabilidad 1", "Matematicas 2", "Programacion Basica"]
+  }
+
+  filtrarListaPersonas(materia:string){
+    if(materia === "todas") this.listaPersonas = this.listaTodasPersonas;
+    this.listaPersonas = this.listaTodasPersonas.filter(persona =>
+      persona.materias.includes(materia))
+  }
 
 }

@@ -3,17 +3,20 @@
 </ion-header>
 
 
-<ion-content>
   <ion-content color="light">
-    <h2>Coincidencias</h2>
+    <select name="" id="" #materiaFiltro (change)="filtrarListaPersonas(materiaFiltro.value)">
+      <option value="todas" selected>Todas</option>
+      <option *ngFor="let materia of persona.materias" value="{{materia}}">{{materia}}</option>
+    </select>
     <ion-list [inset]="true">
+      <h2>Coincidencias</h2>
         <div *ngFor="let persona of listaPersonas" class="personaContainer" [ngClass]="{'virtual' : persona.metodoEstudio.includes('virtual'), 'presencial': persona.metodoEstudio.includes('presencial')}">
           <div class="arriba">
-            <ion-chip *ngFor="let materia of persona.coincidencias">{{materia}}</ion-chip>
+            <ion-chip *ngFor="let materia of persona.materias">{{materia}}</ion-chip>
           </div>
           <ion-label>{{persona.nombre}}</ion-label>
         </div>
         <!-- <ion-icon name="information-circle" slot="end"></ion-icon> -->
     </ion-list>
   </ion-content>
-</ion-content>
+

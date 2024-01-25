@@ -1,5 +1,7 @@
-export interface coincidencia{
+export interface usuario{
     nombre : string,
-    coincidencias: string[],
+    universidad: string;
+    carrera: string;
+    materias: string[],
     metodoEstudio: string[]
 }
