@@ -5,9 +5,27 @@
     <img src="../../../assets/img/perfil/199256069_1125757917919307_5914477531435032390_n.jpg" alt="">
   </div>
   <h1>{{persona.nombre}}</h1>
-  <h2>{{persona.universidad}} - {{persona.carrera}}</h2>
+  <h2>{{persona.universidad}} - {{persona.carrera.nombre}}</h2>
   <ul>
     <p>Estudiando:</p>
-    <li *ngFor="let materia of persona.materias">{{materia}}</li>
+    <li *ngFor="let materia of persona.carrera.materias">{{materia}}</li>
   </ul>
+
+  <ion-button expand="block" (click)="abrirModalMaterias(true)">Abrir</ion-button>
+    <ion-modal [isOpen]="modalMaterias">
+      <ng-template>
+        <ion-header>
+          <ion-toolbar>
+            <ion-title>Modal</ion-title>
+            <ion-button (click)="abrirModalMaterias(false)">Cerrar</ion-button>  
+          </ion-toolbar>
+        </ion-header>
+        <ion-content class="ion-padding">
+          <ion-item *ngFor="let materia of persona.carrera.materias">
+            <ion-label>{{materia.nombre}}</ion-label>
+            <ion-toggle slot="end" [checked]="persona.materias.includes(materia.nombre)"></ion-toggle>
+          </ion-item>  
+        </ion-content> 
+      </ng-template>
+    </ion-modal>
 </ion-content>
