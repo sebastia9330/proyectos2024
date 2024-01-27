@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { listaTodasPersonas } from './core/interfaces/coincidencias';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  constructor() {}
+  constructor() {
+    console.log()
+    if(localStorage.getItem("personas") === null){
+      localStorage.setItem("personas",JSON.stringify(listaTodasPersonas))
+    }
+  }
 }

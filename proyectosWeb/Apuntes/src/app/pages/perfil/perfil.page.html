@@ -6,10 +6,11 @@
   </div>
   <h1>{{persona.nombre}}</h1>
   <h2>{{persona.universidad}} - {{persona.carrera.nombre}}</h2>
-  <ul>
+  <ul *ngIf="persona.materias.length !== 0">
     <p>Estudiando:</p>
-    <li *ngFor="let materia of persona.carrera.materias">{{materia}}</li>
+    <li *ngFor="let materia of persona.materias">{{materia}}</li>
   </ul>
+  <p *ngIf="persona.materias.length === 0">Esta Persona No Esta Inscrito en Ninguna Materia</p>
 
   <ion-button expand="block" (click)="abrirModalMaterias(true)">Abrir</ion-button>
     <ion-modal [isOpen]="modalMaterias">
@@ -23,7 +24,7 @@
         <ion-content class="ion-padding">
           <ion-item *ngFor="let materia of persona.carrera.materias">
             <ion-label>{{materia.nombre}}</ion-label>
-            <ion-toggle slot="end" [checked]="persona.materias.includes(materia.nombre)"></ion-toggle>
+            <ion-toggle slot="end" [checked]="persona.materias.includes(materia.nombre)" (ionChange)="cambiarEstadoMateria(materia.nombre,$event)"></ion-toggle>
           </ion-item>  
         </ion-content> 
       </ng-template>
