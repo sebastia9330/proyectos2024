@@ -1,15 +1,25 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { listaTodasPersonas, usuario } from '../interfaces/coincidencias';
 
 @Injectable({
   providedIn: 'root'
 })
-export class UsuariosService {
+export class UsuariosService{
 
-  constructor() { }
+  constructor() {
+    this.currentUser = this.getCurrentUser()
+  }
+  
+    
+  currentUser:usuario | undefined;
+    
 
-  getAll(){
-    return listaTodasPersonas;
+  getAll():usuario[]{
+    return JSON.parse(localStorage.getItem("personas")!);
+  }
+
+  getCurrentUser(){
+    return JSON.parse(localStorage.getItem("currentUser")!);
   }
 
   getById(){
@@ -29,6 +39,20 @@ export class UsuariosService {
     return coincidencias;
   }
 
+
+  cambiarEstadoMateria(materia:string,estado:any){
+    console.log(materia,estado.detail.checked)
+    if(estado.detail.checked){
+      this.currentUser!.materias.push(materia)
+    }else{
+      this.currentUser!.materias = this.currentUser!.materias.filter(materiaLoop => materiaLoop !== materia);
+    }
+    this.updateCurrentUser();
+  }
+
+  updateCurrentUser(){
+    localStorage.setItem("currentUser",JSON.stringify(this.currentUser))
+  }
 
 
 }
