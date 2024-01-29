@@ -1,17 +1,20 @@
 import { Component } from '@angular/core';
 import { usuario } from '../core/interfaces/coincidencias';
 import { UsuariosService } from '../core/services/usuarios.service';
+import { ViewWillEnter } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
-export class HomePage {
+export class HomePage implements ViewWillEnter{
 
   constructor(private usuarioService: UsuariosService) {}
 
-  
+  ionViewWillEnter(): void {
+    this.listaTodasPersonas = this.usuarioService.getByCoincidencia(this.persona.materias);
+  }
 
   
   persona:usuario = this.usuarioService.currentUser!;

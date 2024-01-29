@@ -8,16 +8,18 @@
   <h2>{{persona.universidad}} - {{persona.carrera.nombre}}</h2>
   <ul *ngIf="persona.materias.length !== 0">
     <p>Estudiando:</p>
-    <li *ngFor="let materia of persona.materias">{{materia}}</li>
+    <li *ngFor="let materia of persona.materias"><ion-chip>{{materia}}</ion-chip></li>
   </ul>
   <p *ngIf="persona.materias.length === 0">Esta Persona No Esta Inscrito en Ninguna Materia</p>
 
-  <ion-button expand="block" (click)="abrirModalMaterias(true)">Abrir</ion-button>
+  <ion-button expand="block" (click)="abrirModalMaterias(true)">Materias</ion-button>
+  <ion-button expand="block" [routerLink]="['/']">Compañeros</ion-button>
+
     <ion-modal [isOpen]="modalMaterias">
       <ng-template>
         <ion-header>
           <ion-toolbar>
-            <ion-title>Modal</ion-title>
+            <ion-title>Materias</ion-title>
             <ion-button (click)="abrirModalMaterias(false)">Cerrar</ion-button>  
           </ion-toolbar>
         </ion-header>
