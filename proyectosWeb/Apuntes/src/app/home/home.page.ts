@@ -1,26 +1,36 @@
 import { Component } from '@angular/core';
-import { coincidencia } from '../core/interfaces/coincidencias';
+import { usuario } from '../core/interfaces/coincidencias';
+import { UsuariosService } from '../core/services/usuarios.service';
+import { ViewWillEnter } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
-export class HomePage {
+export class HomePage implements ViewWillEnter{
 
-  constructor() {}
+  constructor(private usuarioService: UsuariosService) {}
 
-  listaPersonas: coincidencia[] = [
-    {
-      nombre : "Dilza Robles",
-      metodoEstudio: ["presencial"],
-      coincidencias: ["Matematicas 2", "Contabilidad 1"]
-    },
-    {
-      nombre : "Sebastian Carrero",
-      metodoEstudio: ["virtual"],
-      coincidencias: ["Matematicas 2"]
+  ionViewWillEnter(): void {
+    this.listaTodasPersonas = this.usuarioService.getByCoincidencia(this.persona.materias);
+  }
+
+  
+  persona:usuario = this.usuarioService.currentUser!;
+
+  
+  listaTodasPersonas: usuario[] = this.usuarioService.getByCoincidencia(this.persona.materias);
+  listaPersonas: usuario[] = this.listaTodasPersonas;
+
+  filtrarListaPersonas(materia:string){
+    if(materia === "todas") {
+    this.listaPersonas = this.listaTodasPersonas;
+    return
     }
-  ]
+    this.listaPersonas = this.listaTodasPersonas.filter(persona =>
+      persona.materias.includes(materia))
+  }
+  
 
 }
