@@ -17,6 +17,7 @@ body{
     "footer footer"
     ;
     grid-template-columns: 220px 1fr;
+    user-select: none;
 }
 
 header{
@@ -36,8 +37,66 @@ a:not(footer a){
     background-color: var(--color-acento);
     text-decoration: none;
     color: var(--color-fondo);
+    font-weight: bold;
     border-radius: 5px;
     padding: 10px 40px;
+    user-select: none;
+}
+
+a:not(footer a):hover{
+    background-color: #cac8a5;
+}
+
+#tarjetasContainer{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.proyecto{
+    flex-basis:  314px;
+    flex-grow: 1;
+    flex-shrink: 1;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+}
+
+.tecnologia{
+    margin-left: 10px;
+    transition: 0.2s;
+    user-select: none;
+}
+
+.tecnologia:hover{
+    color: var(--color-acento);
+}
+
+.proyecto img{
+    height: 150px;
+    object-fit: cover;
+    filter: grayscale(0.8);
+    transition: 0.3s;
+}
+
+.proyecto:hover img{
+    filter: grayscale(0);
+}
+
+.proyecto div{
+    margin: 0 20px;
+}
+
+.proyecto a{
+    margin-top: auto;
+    text-align: center;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+}
+
+.tarjeta{
+    background-color: var(--color-fondo-tarjeta);
+    border-radius: 5px; 
 }
 
 aside{
