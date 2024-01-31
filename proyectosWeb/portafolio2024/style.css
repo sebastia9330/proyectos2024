@@ -23,6 +23,21 @@ header{
     grid-area: header;
     background-color: #004e69;
     background-image: linear-gradient(53deg, #004e69 0%, #00b3a2 100%);
+    border-bottom-left-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+header div{
+    margin: 40px;
+}
+
+a:not(footer a){
+    background-color: var(--color-acento);
+    text-decoration: none;
+    color: var(--color-fondo);
+    border-radius: 5px;
+    padding: 10px 40px;
 }
 
 aside{
@@ -35,4 +50,14 @@ main{
 
 footer{
     grid-area: footer;
+}
+
+footer a{
+    color: var(--color-texto);
+}
+
+header .foto1{
+    max-height: 300px;
+    flex-shrink: 1;
+    margin-right: 50px;
 }
