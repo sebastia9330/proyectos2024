@@ -1,0 +1,40 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <div class="titulo">
+      <img src="../../assets/imagenes/logo.jpg">
+      <ion-title class="title">
+        Orden de pedido
+      </ion-title>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-item>
+    <ion-label position="floating">Número de Pedido</ion-label>
+    <ion-input [(ngModel)]="numeroPedido" disabled></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Producto</ion-label>
+    <ion-select [(ngModel)]="opcionSeleccionada">
+      <ion-select-option value="opcion1">Cojines</ion-select-option>
+      <ion-select-option value="opcion2">Pocillos</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-input label="Cantidad" label-placement="floating" fill="solid"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input label="Nombre Cliente" label-placement="floating" fill="solid"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input label="Dirección" label-placement="floating" fill="solid"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input label="Telefono" label-placement="floating" fill="solid"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input label="Fecha de entrega" label-placement="floating" fill="solid"></ion-input>
+  </ion-item>
+    
+</ion-content>
