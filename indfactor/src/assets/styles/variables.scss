@@ -1,0 +1,26 @@
+@use "sass:color";
+
+//colores
+$color-1: #253641;
+$color-2: #0e3a47;
+$color-3: #1d8d7d;
+$color-4: #89bf9c;
+$color-5: #e6e4c6;
+$color-6: #e44848;
+
+$color-primario: $color-6;
+$color-primario-claro: color.scale($color-primario,$lightness: 70%);
+$color-primario-oscuro: color.scale($color-primario,$lightness: -30%);
+
+$color-secundario: $color-3;
+$color-secundario-claro: color.scale($color-secundario,$lightness: 70%);
+$color-secundario-oscuro: color.scale($color-secundario,$lightness: -30%);
+
+$color-fondo: $color-4;
+
+$color-texto: $color-1;
+$color-texto-invertido: $color-5;
+
+$breakpoint-mobile: 400px;
+$breakpoint-tablet: 900px;
+$breakpoint-4k: 1500px;
