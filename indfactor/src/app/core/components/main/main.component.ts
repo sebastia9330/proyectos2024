@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { menu } from '../../interfaces/menu';
 
 @Component({
   selector: 'app-main',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./main.component.scss']
 })
 export class MainComponent {
+
+  @Input() fotos:menu[] = []
 
 }
