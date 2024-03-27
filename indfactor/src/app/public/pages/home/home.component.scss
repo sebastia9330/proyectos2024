@@ -1,0 +1,37 @@
+@use "./../../../../assets/styles/variables.scss";
+
+#hero{
+    display: flex;
+    justify-content: space-between;
+    height: 350px;
+    background-color: variables.$color-fondo;
+    background-image: url(./../../../../assets/img/fondo.jpg);
+    background-size: cover;
+
+    img{
+        margin-top: 30px;
+        height: 300px;
+        margin-right: 2rem;
+    }
+
+    div{
+        margin-left: 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        h1{
+            font-size: 4rem;
+            color: white;
+        }
+
+        p{
+            color: white;
+        }
+
+        a{
+            width: fit-content;
+        }
+    }
+    
+}
