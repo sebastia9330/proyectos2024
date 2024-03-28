@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, ElementRef, Input, ViewChild, signal } from '@angular/core';
 import { menu } from '../../interfaces/menu';
 
 @Component({
@@ -8,6 +8,19 @@ import { menu } from '../../interfaces/menu';
 })
 export class MainComponent {
 
+  @ViewChild("modal") modal?: ElementRef<HTMLDialogElement>;
+
   @Input() fotos:menu[] = []
 
+  indiceSeleccionado = signal(0)
+
+
+  cerrarModal(){
+    this.modal?.nativeElement.close();
+  }
+
+  onCardClicked(i:number){
+    this.indiceSeleccionado.set(i)
+    this.modal?.nativeElement.showModal();
+  }
 }

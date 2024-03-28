@@ -44,12 +44,12 @@ class Cliente{
 }
 
 class Mecanico{
-    constructor(cedula, nombre, apellido, salario, FechaContratacion){
+    constructor(cedula, nombre, apellido, salario, fechaContratacion){
         this._cedula = cedula;
         this._nombre = nombre;
         this._apellido = apellido;
         this._salario = salario;
-        this._fechaContratacion = this.fechaContratacion;
+        this._fechaContratacion = fechaContratacion;
     }
     get cedula(){
         return this._cedula

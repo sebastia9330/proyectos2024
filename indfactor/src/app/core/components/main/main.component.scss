@@ -1,0 +1,36 @@
+#container{
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    img{
+        width: 33%;
+        flex-grow: 1;
+        filter: grayscale(0.9);
+        transition: 0.1s;
+        &:hover{
+            filter: grayscale(0.2);
+            scale: 1.02;
+            z-index: 1;
+        }
+    }
+}
+
+dialog{
+    margin: auto;
+    width: 50%;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    &::backdrop{
+        backdrop-filter: blur(2px);
+    }
+    h3{
+        font-size: 2rem;
+    }
+    .botones{
+        margin-top: 1rem;
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        padding-bottom: 10px;
+    }
+}
