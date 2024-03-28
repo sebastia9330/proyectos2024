@@ -35,3 +35,10 @@
     }
     
 }
+
+
+@media(max-width: variables.$breakpoint-tablet){
+    #hero img{
+        display: none;
+    }
+}

@@ -4,6 +4,7 @@
     (click) = "onCardClicked(i)">
 </div>
 <dialog type="modal" #modal>
+    <button (click)="cerrarModal()">X</button>
     <img src="" alt="">
     <h3>{{fotos[indiceSeleccionado()].titulo}}</h3>
     <p>{{fotos[indiceSeleccionado()].catalogo}}</p>
