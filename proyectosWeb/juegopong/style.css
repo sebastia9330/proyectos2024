@@ -16,6 +16,14 @@
     background-color: #fff;
 }
 
+.bola{
+    background-color: #fff;
+    width: 30px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    position: absolute;
+}
+
 #zonaJuego .paleta:nth-of-type(1){
     left: 0;
 }
