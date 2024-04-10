@@ -1,4 +1,6 @@
 const zonaJuego = document.getElementById("zonaJuego");
+let bola;
+const mensajeElement = document.getElementById("mensaje");
 
 class Paleta{
 
@@ -13,6 +15,7 @@ class Paleta{
         this.element = document.createElement("div");
         this.element.classList = "paleta";
         zonaJuego.appendChild(this.element);
+        this.resetPosicion();
     }
 
     subir(){
@@ -46,6 +49,11 @@ class Paleta{
         clearInterval(this.movimiento)
         this.movimiento = undefined;
     }
+
+    resetPosicion(){
+        this.y = document.body.clientHeight/2 - this.alto/2;
+        this.element.style.top = this.y + "px";
+    }
 }
 
 class Bola{
@@ -61,6 +69,8 @@ class Bola{
         this.element.classList = "bola";
         zonaJuego.appendChild(this.element);
         this.resetPosicion();
+        this.mover();
+        this.mensajeElement.classList.toggle("escondido",true);
     }
 
     resetPosicion(){
@@ -94,8 +104,9 @@ class Bola{
                 //meter Punto
                 if(this.x < 0 || this.x > document.body.clientWidth - this.ancho){
                     console.log("punto") 
-                    this.eliminar();
+                    tablero.sumar(this.x < 100 ? 2 : 1);
                 }
+                this.element.style.left = this.x+"px";
 
 
                 if(this.x < 0 || this.x > document.body.clientWidth - this.ancho){
@@ -115,6 +126,32 @@ class Bola{
     eliminar(){
         clearInterval(this.movimiento);
         zonaJuego.removeChild(this.element)
+        bola = undefined;
+    }
+}
+
+class Tablero{
+    j1Score = 0;
+    j2Score = 0;
+
+    constructor(){
+        this.element = document.createElement("p");
+        this.element.id = "tablero";
+        zonaJuego.appendChild(this.element);
+        this.actualizarTexto()
+    }
+
+    actualizarTexto(){
+        this.element.textContent = this.j1Score + " - " + this.j2Score;
+    }
+
+    sumar(p){
+        if(p === 1) this.j1Score++
+        else this.j2Score++
+        this.actualizarTexto()
+        bola.eliminar();
+        J1.resetPosicion();
+        J2.resetPosicion();
     }
 }
 
@@ -131,6 +168,9 @@ document.addEventListener("keydown",(e)=>{
             break;
         case "ArrowDown":
             J2.bajar();
+            break;
+        case " ":
+            if(!bola) bola = new Bola();
             break;
     }
 })
@@ -151,4 +191,4 @@ document.addEventListener("keyup",(e)=>{
 
 const J1 = new Paleta();
 const J2 = new Paleta();
-const bola = new Bola();
+const tablero = new Tablero();
