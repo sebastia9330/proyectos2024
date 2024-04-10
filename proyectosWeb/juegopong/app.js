@@ -1,6 +1,7 @@
 const zonaJuego = document.getElementById("zonaJuego");
 let bola;
 const mensajeElement = document.getElementById("mensaje");
+const instruccionesElement = document.getElementById("instrucciones");
 
 class Paleta{
 
@@ -70,7 +71,8 @@ class Bola{
         zonaJuego.appendChild(this.element);
         this.resetPosicion();
         this.mover();
-        this.mensajeElement.classList.toggle("escondido",true);
+        mensajeElement.classList.toggle("escondido",true);
+        instruccionesElement.classList.toggle("escondido",true);
     }
 
     resetPosicion(){
@@ -103,7 +105,7 @@ class Bola{
 
                 //meter Punto
                 if(this.x < 0 || this.x > document.body.clientWidth - this.ancho){
-                    console.log("punto") 
+                    //console.log("punto") 
                     tablero.sumar(this.x < 100 ? 2 : 1);
                 }
                 this.element.style.left = this.x+"px";
@@ -152,6 +154,8 @@ class Tablero{
         bola.eliminar();
         J1.resetPosicion();
         J2.resetPosicion();
+        mensajeElement.textContent = 'presiona "espacio" para continuar';
+        mensajeElement.classList.toggle("escondido",false);
     }
 }
 
@@ -189,6 +193,6 @@ document.addEventListener("keyup",(e)=>{
     }
 })
 
-const J1 = new Paleta();
 const J2 = new Paleta();
+const J1 = new Paleta();
 const tablero = new Tablero();
