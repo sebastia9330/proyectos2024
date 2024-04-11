@@ -2,6 +2,7 @@ const zonaJuego = document.getElementById("zonaJuego");
 let bola;
 const mensajeElement = document.getElementById("mensaje");
 const instruccionesElement = document.getElementById("instrucciones");
+estadoJuego = "PAUSE";
 
 class Paleta{
 
@@ -15,7 +16,7 @@ class Paleta{
     constructor(){
         this.element = document.createElement("div");
         this.element.classList = "paleta";
-        zonaJuego.appendChild(this.element);
+        zonaJuego.children[0].appendChild(this.element);
         this.resetPosicion();
     }
 
@@ -135,6 +136,7 @@ class Bola{
 class Tablero{
     j1Score = 0;
     j2Score = 0;
+    puntajeMaximo = 2;
 
     constructor(){
         this.element = document.createElement("p");
@@ -156,6 +158,26 @@ class Tablero{
         J2.resetPosicion();
         mensajeElement.textContent = 'presiona "espacio" para continuar';
         mensajeElement.classList.toggle("escondido",false);
+        this.estadoJuego = "PAUSE"
+        if(this.j1Score >= this.puntajeMaximo){
+            this.ganar(1)
+        }
+        else if(this.j2Score >= this.puntajeMaximo){
+            this.ganar(2)
+        }
+    }
+
+    ganar(p){
+        mensajeElement.textContent = 'Gano el jugador #: ' + p;
+        mensajeElement.classList.toggle("titilar",true);
+        estadoJuego = "END"
+    }
+
+    reset(){
+        this.j1Score = 0;
+        this.j2Score = 0;
+        this.actualizarTexto();
+        mensajeElement.classList.toggle("titilar",false);
     }
 }
 
@@ -175,6 +197,8 @@ document.addEventListener("keydown",(e)=>{
             break;
         case " ":
             if(!bola) bola = new Bola();
+            if(estadoJuego === "END") tablero.reset()
+            estadoJuego = "PLAY";
             break;
     }
 })
@@ -193,6 +217,6 @@ document.addEventListener("keyup",(e)=>{
     }
 })
 
-const J2 = new Paleta();
 const J1 = new Paleta();
+const J2 = new Paleta();
 const tablero = new Tablero();
