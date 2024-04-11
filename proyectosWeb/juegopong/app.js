@@ -12,6 +12,7 @@ class Paleta{
     movimiento;
     alto = 200;
     ancho = 20
+    cpu;
 
     constructor(){
         this.element = document.createElement("div");
@@ -53,10 +54,41 @@ class Paleta{
     }
 
     resetPosicion(){
+        this.freeze();
         this.y = document.body.clientHeight/2 - this.alto/2;
         this.element.style.top = this.y + "px";
     }
+
+    toggleCpu(){
+        if(this.cpu){
+            clearInterval(this.cpu)
+            this.freeze()
+            this.cpu = undefined
+        }else{
+            this.cpu = setInterval(() =>{
+                if(!bola) return;
+                if(bola.getCentro() > this.y + this.alto/3 &&
+                    bola.getCentro() < this.y + this.alto/3*2){
+                        console.log("cpu centro")
+                        this.freeze();
+                    }
+                    else if(bola.getCentro() < this.getCentro()){
+                        console.log("cpu subiendo")
+                        this.subir();
+                    }
+                    else if(bola.getCentro() > this.getCentro()){
+                        console.log("cpu bajando")
+                        this.bajar();
+                    }
+            },20)
+        }
+    }
+
+    getCentro(){
+        return this.y + this.alto/2;
+    }
 }
+
 
 class Bola{
     x;
@@ -135,15 +167,19 @@ class Bola{
     }
 
     obtenerVariacionY(j){
-        const diferencia =  (this.y + this.ancho/2) - (j.y + j.alto/2);
+        const diferencia =  this.getCentro() - j.getCentro();
         return diferencia / 10;
+    }
+
+    getCentro(){
+        return this.y + this.ancho/2;
     }
 }
 
 class Tablero{
     j1Score = 0;
     j2Score = 0;
-    puntajeMaximo = 2;
+    puntajeMaximo = 6;
 
     constructor(){
         this.element = document.createElement("p");
@@ -201,6 +237,12 @@ document.addEventListener("keydown",(e)=>{
             break;
         case "ArrowDown":
             J2.bajar();
+            break;
+        case "1":
+            J1.toggleCpu();
+            break;
+        case "2":
+            J2.toggleCpu();
             break;
         case " ":
             if(!bola) bola = new Bola();
