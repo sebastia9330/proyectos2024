@@ -62,7 +62,7 @@ class Bola{
     x;
     y;
     dx = -10;
-    dy = -10;
+    dy = 0;
     movimiento;
     ancho = 30;
 
@@ -94,6 +94,7 @@ class Bola{
                 if(this.x < 0 + J1.ancho &&
                     this.y + this.ancho/2 > J1.y &&
                     this.y + this.ancho/2 < J1.y + J1.alto){
+                        this.dy += this.obtenerVariacionY(J1)
                         this.dx = this.dx* -1
                 }
 
@@ -101,7 +102,8 @@ class Bola{
                 if(this.x + this.ancho > document.body.clientWidth - J2.ancho &&
                     this.y + this.ancho/2 > J2.y &&
                     this.y + this.ancho/2 < J2.y + J2.alto){
-                    this.dx = this.dx* -1
+                        this.dy += this.obtenerVariacionY(J2)
+                        this.dx = this.dx* -1
                 }
 
                 //meter Punto
@@ -130,6 +132,11 @@ class Bola{
         clearInterval(this.movimiento);
         zonaJuego.removeChild(this.element)
         bola = undefined;
+    }
+
+    obtenerVariacionY(j){
+        const diferencia =  (this.y + this.ancho/2) - (j.y + j.alto/2);
+        return diferencia / 10;
     }
 }
 
