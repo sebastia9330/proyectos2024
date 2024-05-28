@@ -118,6 +118,15 @@ class Bola{
     }
 }
 
+class Tablero{
+
+    constructor(){
+        this.element = document.createElement("p");
+        this.element.id = "tablero";
+        zonaJuego.appendChild(this.element);
+    }
+}
+
 document.addEventListener("keydown",(e)=>{
     switch(e.key){
         case "w":
@@ -152,3 +161,4 @@ document.addEventListener("keyup",(e)=>{
 const J1 = new Paleta();
 const J2 = new Paleta();
 const bola = new Bola();
+const tablero = new Tablero();
