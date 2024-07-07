@@ -40,3 +40,13 @@ th, td{
 th{
     background-color: #f2f2f2;
 }
+
+/*ganancia-perdida*/
+
+.ganancia{
+    background-color: lightgreen;
+}
+
+.perdida{
+    background-color: lightcoral;
+}

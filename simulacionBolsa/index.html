@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simulacion De inversion</title>
+    <title>Simulación de Inversión</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Simulacion de Inverdion en Bolsa</h1>
+    <h1>Simulación de Inversión en Bolsa</h1>
     <form id="investmentForm">
-        <label for="symbol">Simbolo de Acción:</label>
+        <label for="symbol">Símbolo de Acción:</label>
         <input type="text" id="symbol" name="symbol" required>
         <label for="amount">Monto a Invertir:</label>
         <input type="number" id="amount" name="amount" required>
-        <button type="submit">Agregar Inversion</button>
+        <button type="submit">Agregar Inversión</button>
     </form>
     <table id="investmentTable">
         <thead>
@@ -23,14 +23,17 @@
                 <th>Precio por Unidad</th>
                 <th>Cantidad</th>
                 <th>Valor Actual</th>
-                <th>Ganancia/Perdida</th>
+                <th>Ganancia/Pérdida</th>
+                <th>Dividendo (%)</th>
+                <th>Fecha de Dividendo</th>
+                <th>Dividendo Obtenido</th>
             </tr>
         </thead>
-        <tbody>
-
-        </tbody>
+        <tbody></tbody>
     </table>
-
+    <footer>
+        <p>Datos proporcionados por <a href="https://financialmodelingprep.com/developer/docs/" target="_blank">Financial Modeling Prep</a>.</p>
+    </footer>
     <script src="app.js"></script>
 </body>
 </html>
