@@ -1,0 +1,33 @@
+body{
+--voronoi-cell-colors:#66ccff, #99ffcc, #00ffcc, #33ccff, #99ff99, #66ff99, #00ffff;
+--voronoi-number-of-cells:25;
+--voronoi-line-color: black;
+--voronoi-line-width:1;
+--voronoi-dot-color: black;
+--voronoi-dot-size:0;
+background: paint(voronoi)
+}
+
+h1{
+    /* text-decoration: underline; */
+    --tooltip-bg: red;
+
+--tooltip-position: 50;
+--tooltip-size:15;
+
+--border-width:20;
+
+padding: 1rem;
+background: var(--tooltip-bg);
+border-bottom: 1px solid transparent;
+border-image-slice: 0 0 100% 0;
+border-image-width: var(--border-width);
+border-image-outset: var(--border-width);
+border-image-source: paint(tooltip);
+    
+}
+
+.subrayado{
+    background: paint(subrayado);
+}
+
