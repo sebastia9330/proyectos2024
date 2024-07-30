@@ -28,6 +28,12 @@ border-image-source: paint(tooltip);
 }
 
 .subrayado{
+    --subrayado-tamaño: 5;
     background: paint(subrayado);
+}
+
+.subrayado:hover{
+    --subrayado-tamaño: 25;
+    --subrayado-color: green;
 }
 
