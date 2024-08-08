@@ -28,11 +28,20 @@ border-image-source: paint(tooltip);
 }
 
 .subrayado{
+<<<<<<< HEAD
     --subrayado-tamaño: 10;
+=======
+    --subrayado-tamaño: 5;
+>>>>>>> 0006d53b8c6734313c9da937a8965133a56a27f5
     background: paint(subrayado);
 }
 
 .subrayado:hover{
+<<<<<<< HEAD
     --subrayado-tamaño: 30;
+=======
+    --subrayado-tamaño: 25;
+    --subrayado-color: green;
+>>>>>>> 0006d53b8c6734313c9da937a8965133a56a27f5
 }
 
