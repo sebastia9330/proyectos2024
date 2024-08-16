@@ -7,3 +7,4 @@ boton.addEventListener("click",()=>{
         textos[i].style.color = "red" 
     }
 })
+
