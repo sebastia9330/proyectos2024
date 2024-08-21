@@ -1,5 +1,11 @@
 {
+<<<<<<< HEAD
+    "editor.fontFamily": "FiraCode",
+    "material-icon-theme.folders.customClones": [
+        
+=======
     "python.analysis.extraPaths": [
         "./python/modulos"
+>>>>>>> dfa68995ff016a6415f0519adbcba70378b743df
     ]
 }
