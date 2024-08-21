@@ -1,0 +1,2 @@
+Esta es una nueva línea de texto.
+Esta es una línea adicional.
