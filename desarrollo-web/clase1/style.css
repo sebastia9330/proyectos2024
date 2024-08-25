@@ -4,10 +4,77 @@ body{
 }
 
 h1{
-    color: beige;
+    color: rgb(255, 255, 255);
+}
+
+h2{
+    color: bisque;
+}
+
+h2:hover{
+    color: black;
+    font-size: 20px;
 }
 
 p{
     color: brown;
     font-size: 25px;
+}
+
+.tarjetas{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+.tarjeta{
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    padding: 20px;
+    margin: 10px;
+    flex: 1 1 300px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.tarjeta h2{
+    margin-top: 0;
+}
+
+#toggleTarjetas{
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    cursor: pointer;
+}
+
+#toggleTarjetas:hover{
+    background-color: red;
+}
+
+img{
+    width: 100px;
+}
+
+@media(max-width: 600px){
+    .tarjetas{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tarjeta{
+        flex: 1 1 80%;
+    }
 }
