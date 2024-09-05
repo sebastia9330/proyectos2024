@@ -1,26 +1,19 @@
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #333;
-    padding: 10px 20px;
+/*3.1 Selectores Avanzados
+
+Selector de Atributo: Selecciona elementos basados en un atributo o valor de atributo.*/
+a[target="_blank"] {
+    color: red;
 }
 
-.nav-links {
-    display: flex;
-    list-style: none;
-}
-
-.nav-links li {
-    margin-left: 20px;
-}
-
-.nav-links a {
-    color: white;
+/*Pseudoclases: Estiliza elementos en un estado específico.*/
+a:hover {
     text-decoration: none;
-    font-size: 18px;
 }
 
-.nav-links a:hover {
-    text-decoration: underline;
+/*Pseudoelementos: Estiliza partes específicas de un elemento.*/
+p::first-line {
+    font-weight: bold;
 }
+
+
+
