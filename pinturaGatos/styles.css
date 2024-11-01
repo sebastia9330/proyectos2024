@@ -24,7 +24,13 @@ body{
 }
 
 .cat-left-ear {
+    position: absolute;
+    top: -26px;
+    left: -31px;
     border-left: 35px solid transparent;
     border-right: 35px solid transparent;
     border-bottom: 70px solid #5e5e5e;
+    border-top-left-radius: 90px;
+    border-top-right-radius: 10px;
+    transform: rotate(-45deg);
 }
