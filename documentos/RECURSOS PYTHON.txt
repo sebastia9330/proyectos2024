@@ -1,0 +1,62 @@
+
+
+2. **Recursos**:
+   - Documentación oficial de Python.
+   - Curso “Python for Beginners” en YouTube o plataformas como Udemy.
+
+4. **Recursos**:
+   - Curso “Object-Oriented Programming in Python” (Udemy, Coursera).
+   - “Automate the Boring Stuff with Python” de Al Sweigart.
+
+3. **Recursos**:
+   - Tutorial Flask en la documentación oficial.
+   - Curso “Flask Mega-Tutorial” de Miguel Grinberg.
+
+4. **Recursos**:
+   - "Automate the Boring Stuff with Python" de Al Sweigart
+   - Curso "Python for Data Science and Machine Learning Bootcamp" (Udemy)
+
+3. **Recursos**:
+   - "Python for Data Analysis" de Wes McKinney
+   - Curso de Kaggle: [Python](https://www.kaggle.com/learn/python) y [Pandas](https://www.kaggle.com/learn/pandas)
+   - Curso "Data Science with Python" (Coursera, DataCamp)
+
+4. **Recursos**:
+   - Curso "Introduction to Probability and Statistics Using Python" (EdX)
+   - "Think Stats" de Allen B. Downey
+
+3. **Recursos**:
+   - Curso “Flask Mega-Tutorial” de Miguel Grinberg (continuación).
+   - Guía de despliegue de Flask (Heroku, PythonAnywhere).
+
+4. **Recursos**:
+   - "Algorithms in Python" (Geeks for Geeks)
+   - "Introduction to Algorithms" (MIT OpenCourseWare)
+
+4. **Recursos**:
+   - Documentación oficial de Django.
+   - Curso “Django for Beginners” de William S. Vincent.
+
+5. **Recursos**:
+   - Curso "Machine Learning with Python" (Coursera)
+   - "Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow" de Aurélien Géron
+
+4. **Recursos**:
+   - Curso “Django for APIs” de William S. Vincent.
+   - Curso “Two Scoops of Django” de Daniel Roy Greenfeld.
+
+4. **Recursos**:
+   - "Deep Learning with Python" de François Chollet
+   - Curso "Deep Learning Specialization" (Coursera)
+
+3. **Recursos**:
+   - Curso “APIs with Flask and Django” (Udemy).
+   - Curso “Designing Microservices Architecture” (Coursera, Udemy).
+
+2. **Recursos**:
+   - Participar en competencias de Kaggle
+   - Leer y aplicar papers recientes en ciencia de datos
+
+4. **Recursos**:
+   - Participar en proyectos de código abierto.
+   - Competencias en plataformas como GitHub y Devpost.
