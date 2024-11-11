@@ -40,6 +40,10 @@ h1::after,h2::after{
     margin-bottom: var(--margin-items);
 }
 
+div, img, section{
+    image-rendering: pixelated;
+}
+
 .contenedor-chico{
     margin-left: var(--contenedor-chico);
     margin-right: var(--contenedor-chico);
@@ -101,6 +105,15 @@ section a{
 }
 
 /*APIs*/
+#apis{
+    background-image: url("./img/fondos/edificios-2.png");
+    background-size: 110rem auto;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    padding-bottom: 10rem;
+    margin-bottom: 4rem;
+}
+
 #apis li{
     border-top: var(--borde-punteado);
     padding: 1rem;
@@ -122,3 +135,12 @@ section a{
 }
 
 
+/* Vest in class */
+#best-in-class{
+    background-color: var(--color-background-alt);
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-right: 1rem;
+    padding: 8rem 4rem;
+    border-radius: var(--border-)
+}
